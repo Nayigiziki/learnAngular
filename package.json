@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon server/server.js"
+    "serve": "bower install && npm install && gulp serve"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "nodemon": "^1.11.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.2.1",
