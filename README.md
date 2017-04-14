@@ -20,4 +20,4 @@ in another window run npm run serve
         - ng-click
 
 
- todo --> add gulp install commands, git workflow
+ todo --> add gulp install commands, git workflow, serve/build app in 1 command
