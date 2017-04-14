@@ -7,16 +7,10 @@ angular.module('todoApp', [
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        .state('landingPage', {
-            url: '/',
-            templateUrl: '/app/landing-page/landing-page.html',
-            controller: 'landingPageController as landingPageCtrl'
-        })
         .state('todo', {
-            url: '/todo',
+            url: '/',
             templateUrl: '/app/todo/todo.html',
             controller: 'todoController as todoCtrl'
         });
 
-//
 });
