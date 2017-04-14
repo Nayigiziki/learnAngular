@@ -7,7 +7,7 @@ dist
 .bower
 .build
 .sass-cache
-.idea
+.idea/*
 *.iml
 /vendor
 .idea/workspace.xml
