@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <form class="col s12">
-            <div class="row">
+        <form class="col s12" ng-submit="todoCtrl.submit()">
+            <div class="row" >
                 <div class="input-field col s6">
-                    <input id="icon_prefix" type="text" class="validate" placeholder="Add a todo" ng-model="todoCtrl.addTodoForm">
+                    <input id="icon_prefix" type="text" class="validate" placeholder="Add a todo" ng-model="todoCtrl.todoItem">
                 </div>
             </div>
         </form>
