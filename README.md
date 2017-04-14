@@ -18,3 +18,6 @@ in another window run npm run serve
         - ng-repeat
         - ng-model
         - ng-click
+
+
+ todo --> add gulp install commands, git workflow
