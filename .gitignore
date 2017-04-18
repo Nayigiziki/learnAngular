@@ -11,4 +11,4 @@ dist
 *.iml
 /vendor
 .idea/workspace.xml
-src/scripts.js
+./src/scripts.js

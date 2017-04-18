@@ -4,6 +4,7 @@ angular.module('todoApp', [
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var basePath = 'src/app';
+    //joe
     $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('todo', {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "bower install && npm install && gulp serve"
+    "serve": "bower install && npm install && gulp build-js && gulp serve"
   },
   "author": "",
   "license": "ISC",
