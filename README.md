@@ -9,7 +9,7 @@ Getting Started:
 
 Objective: We will be making a todo App
 
-How to run application:
+How to run the application:
 `npm run serve`
 
 - 4/14/2017
@@ -19,6 +19,15 @@ How to run application:
         - ng-model
         - ng-click
 
-Git Workflow
+Basic Git Commands
+- `Git status`
+- `Git checkout`
+- `Git add`
+- `Git commit`
+- `Git branch`
+- `Git fetch`
+- `Git pull`
+- `Git push`
+- `Git merge`
+- `Git rebase`
 
- todo --> git workflow
