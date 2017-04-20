@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "bower install && npm install && gulp build-js && gulp serve"
+    "serve": "bower install && npm install && gulp build-js && gulp serve",
+    "fakeData" : "node ./server/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.3",
     "express": "^4.15.2",
     "gulp-batch": "^1.0.5",
     "gulp-sourcemaps": "^2.5.0",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-watch": "^4.3.11"
