@@ -22,7 +22,11 @@ gulp.task('js-watch', ['build-js'], function (done) {
 gulp.task('serve', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./",
+            middleware: function (req, res, next) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                next();
+            }
         }
     });
 
