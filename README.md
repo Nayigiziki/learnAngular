@@ -12,7 +12,7 @@ Objective: We will be making a todo App
 How to run the application:
 `npm run serve`
 
-- 4/14/2017
+- 4/14/2017 && 4/21/2017
     - We will learn about the following directives
         - ng-submit
         - ng-repeat
