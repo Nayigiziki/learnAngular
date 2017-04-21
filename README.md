@@ -18,6 +18,7 @@ How to run the application:
         - ng-repeat
         - ng-model
         - ng-click
+        - ng-show
 
 Basic Git Commands
 - `Git status`
