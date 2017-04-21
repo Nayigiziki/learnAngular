@@ -19,7 +19,8 @@ How to run the application:
         - ng-model
         - ng-click
         - ng-show
-
+        - https://jsbin.com/vadobagosa/2/edit?html,js,output - notes from JSBIN
+        
 Basic Git Commands
 - `Git status`
 - `Git checkout`
