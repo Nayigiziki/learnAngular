@@ -3,24 +3,27 @@
         <form class="col s12" ng-submit="todoCtrl.submit()">
             <div class="row" >
                 <div class="input-field col s6">
-                    <input id="icon_prefix" type="text" class="validate" placeholder="Add a todo">
+                    <input id="icon_prefix" ng-model="todoCtrl.newTodo" type="text" class="validate" placeholder="Add a todo">
                 </div>
             </div>
         </form>
     </div>
 
     <div class="row">
-        <div class="col s12">
+        <div class="col s12" >
             <!-- list each todo -->
-            <div class="card">
+            <div class="card" ng-repeat="todo in todoCtrl.todos">
                 <div class="card-content" >
-                    <p></p>
+                    <p ng-hide="todoCtrl.selectedIndex == $index"> {{todo.text}} </p>
+                    <input ng-show="todoCtrl.selectedIndex == $index" ng-model="todoCtrl.editTodo" type="text" >
                 </div>
                 <div class="card-action">
                     <!-- listen and handle when Delete is clicked -->
-                    <a href="#">Delete</a>
+                    <a href="#" ng-click="todoCtrl.delete($index)">Delete</a>
                     <!-- listen and handle when Edit is clicked -->
-                    <a href="#">Edit</a>
+                    <a href="#" ng-hide="todoCtrl.selectedIndex == $index" ng-click="todoCtrl.edit($index)">Edit</a>
+                    <a href="#" ng-show="todoCtrl.selectedIndex == $index" ng-click="todoCtrl.done($index)">Done</a>
+
                 </div>
             </div>
         </div>
