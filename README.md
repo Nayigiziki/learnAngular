@@ -32,11 +32,11 @@ Basic Git Commands
 - `Git rebase`
 
 - 5/5/2017
-	-Review Todo Solution
-	-Go over the following directives
-		-ng-src
-	-Go over creating a new state
-	-Go over dependency injection
-	-Go over callbacks
-	-Go over services
+	- Review Todo Solution
+	- Go over the following directives
+		- ng-src
+	- Go over creating a new state
+	- Go over dependency injection
+	- Go over callbacks
+	- Go over services
 
