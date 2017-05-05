@@ -6,7 +6,6 @@ angular.module('todo', [])
             // @todo: finish implementing the submit function
             // @todo:add an edit function
             // @todo: add a delete function 
-
             this.todos = model.todos;
 
             this.submit = function onSubmit() {
