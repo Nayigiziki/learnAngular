@@ -1,18 +1,33 @@
 angular.module('movies', [])
-    .controller('moviesController', ['$scope', function ($scope) {
+    .controller('moviesController', ['$scope', 'imdb', 'todoModel', function ($scope, imdb, todoModel) {
             $scope.movieCtrl = this;
 
             // inject the IMDB service
             // @todo: search for a movie
             // @todo: display the results on the screen
-            // @todo: add the ability to add the movie to your todo module
-            
+            // @todo: add the ability to add the movie to your todo module           
+  
 
-            //example:
-            // imdb.get('Fun', function(results) {
-            //     // movie information is on the data property of results
+            this.search = function() {
+                if(this.movie) {
+                    imdb.get(this.movie, function(results) {
+                        // movie information is on the data property of results
+                        var movie = results.data;
+                        this.movieResult = {
+                            title: movie.Title,
+                            poster: movie.Poster,
+                            actors: movie.Actors,
+                            imdbRating: movie.imdbRating
+                        }
+                    }.bind(this));                  
+                }    
 
-            // });
+            }
+
+            this.clear = function(evt) {
+                this.movie = '';
+                this.movieResult = {};
+            }
 
 
     }])

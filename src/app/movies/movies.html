@@ -1,13 +1,15 @@
 <div class="container">
     <div class="row">
-        <form class="col s12" ng-submit="moviesCtrl.submit()">
+        <form class="col s12" ng-submit="moviesCtrl.search()">
             <div class="row" >
                 <div class="input-field col s6">
-                    <input id="icon_prefix" type="text" class="validate" placeholder="Add a todo" ng-model="moviesCtrl.movie">
+                    <input id="icon_prefix" type="text" class="validate" placeholder="Search" ng-model="moviesCtrl.movie">
                     <!-- @todo: Clear search results -->
+
                 </div>
             </div>
         </form>
+        <button href="#" ng-click="moviesCtrl.clear()">Clear</button>
     </div>
 
     <div class="row">
@@ -16,7 +18,7 @@
             <div class="card">
                 <div class="card-content" >
                     <div>{{moviesCtrl.movieResult.title}}</div>
-                    <img ng-src="{{moviesCtrl.movieResult.poster}}"></div>
+                    <img ng-src="{{moviesCtrl.movieResult.poster}}" />
                     <div>{{moviesCtrl.movieResult.actors}}</div>
                     <div>{{moviesCtrl.movieResult.imdbRating}}</div>
                 </div>

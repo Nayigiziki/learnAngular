@@ -13,7 +13,11 @@ angular.module('todoApp', [
             templateUrl: basePath + '/todo/todo.html',
             controller: 'todoController as todoCtrl'
         })
-        // Add a new state for movies
+        .state('movies',{
+            url: '/movies',
+            templateUrl: basePath + '/movies/movies.html',
+            controller: 'moviesController as moviesCtrl'
+        })
         ;
 
 
