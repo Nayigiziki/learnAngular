@@ -1,34 +1,61 @@
-  <ul class="collection">
-    <li class="collection-item avatar">
-      <i class="material-icons description">description</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons description">description</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons description">description</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons description">description</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
-    </li>
-  </ul>
+  <div class="row">
+          <div class="s12">
+            <nav>
+              <div class="nav-wrapper">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="">Top</a></li>
+                  <li><a href="">Hot</a></li>
+                  <li><a href="">latest</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+  </div>
+
+
+  <div class="row">
+
+      <ul class="container">
+        <li class="collection-item avatar row" ng-repeat="post in redditCtrl.posts | orderBy: '-count'">
+
+          <div class="col s1 post">
+              <h3>{{post.count}}</h3>
+              <a href="" ng-click="redditCtrl.incrementPost(post)"><i class="material-icons">thumb_up</i></a>
+              <a href="" ng-click="redditCtrl.decrementPost(post)"><i class="material-icons">thumb_down</i></a>
+
+          </div>
+
+          <div class="col s6">
+                
+                <span class="title"><h2>{{post.title}}</h2></span>
+                <p>{{post.body}}<br>
+                  <i>{{post.date}} - {{post.user}}</i>
+                </p>
+                <a href="" ><i class="material-icons" ng-click="comment.showComment=!comment.showComment">comment</i></a>
+                <ul ng-show="comment.showComment">
+                  <i><b>Comments!</b></i>
+                  <li ng-repeat="comment in post.comments">{{comment}}</li>
+                </ul>
+                
+              
+          </div>
+          
+        </li>
+
+      </ul>
+
+
+
+
+  </div>
+
+
+      <div class="col s3 container">
+        <!-- Grey navigation panel -->
+        <input type="" name="" ng-model="redditCtrl.newPost.title" placeholder="Title"></input>
+        <input type="" name="" ng-model="redditCtrl.newPost.user" placeholder="User Name"></input>
+        <textarea ng-model="redditCtrl.newPost.body" placeholder="Body"></textarea>
+
+        <a href="" ng-click="redditCtrl.addPost()"><i class="material-icons">note_add</i></a>
+
+      </div>

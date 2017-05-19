@@ -2,3 +2,11 @@
     text-decoration: line-through;
     color: grey;
 }
+
+.postContainer {
+	display: flex;
+}
+
+.post {
+	align-items: center;
+}

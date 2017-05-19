@@ -1,7 +1,8 @@
 angular.module('todoApp', [
     'ui.router',
     'todo', 
-    'movies'
+    'movies',
+    'reddit'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var basePath = 'src/app';
@@ -18,7 +19,11 @@ angular.module('todoApp', [
             templateUrl: basePath + '/movies/movies.html',
             controller: 'moviesController as moviesCtrl'
         })
+        .state('reddit',{
+            url: '/reddit',
+            templateUrl: basePath + '/reddit/reddit.html',
+            controller: 'redditController as redditCtrl'
+        })
         ;
-
 
 });
