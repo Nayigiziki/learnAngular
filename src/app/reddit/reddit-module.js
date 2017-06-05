@@ -14,7 +14,9 @@ angular.module('reddit', [])
             }
 
             this.addComment = function(post) {
-                reddit.addComment(post, this.postUser, this.comment);
+                reddit.addComment(post, this.userName, this.newComment);
+                this.userName = '';
+                this.newComment = '';
             }
 
             this.incrementPost = function(post) {
@@ -24,6 +26,7 @@ angular.module('reddit', [])
             this.decrementPost =  function(post) {
                 post.count--;
             }
+
 
 
 
@@ -59,10 +62,8 @@ angular.module('reddit', [])
 
         var addComment = function(post, user, content) {
             var comment = createComment(user, content);
-            post.push(comment);
+            post.comments.push(comment);
         }
-
-
 
         var init = function() {
             posts.push({
@@ -70,7 +71,7 @@ angular.module('reddit', [])
                 user: 'Joe',
                 date: moment().format('MMMM Do YYYY, h:mm:ss a'),
                 body: 'The first Reddit post, ever!',
-                comments: ['dummy comment'],
+                comments: [ createComment('Joe', 'Dummy Content') ],
                 showComment: false,
                 count: 0
             });
