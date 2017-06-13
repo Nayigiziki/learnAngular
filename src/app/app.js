@@ -21,8 +21,7 @@ angular.module('todoApp', [
         })
         .state('reddit',{
             url: '/reddit',
-            templateUrl: basePath + '/reddit/reddit.html',
-            controller: 'redditController as redditCtrl'
+            templateUrl: basePath + '/reddit/reddit.html'
         })
         ;
 

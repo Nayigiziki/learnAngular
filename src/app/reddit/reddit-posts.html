@@ -1,7 +1,7 @@
 <div class="row">
     <ul class="container">
       <li class="collection-item avatar row" ng-repeat="post in redditCtrl.posts | orderBy: '-count'">
-        <reddit-post></reddit-post>
+        <reddit-post post="post"></reddit-post>
       </li>
     </ul>
 </div>

@@ -1,6 +1,5 @@
 angular.module('reddit', [])
     .controller('redditController', ['$scope', 'reddit', function ($scope, reddit) {
-            $scope.redditCtrl = this;
             this.posts = reddit.getPosts();
             this.newPost = {};
 
@@ -27,8 +26,20 @@ angular.module('reddit', [])
                 post.count--;
             }
 
+    }])
+    .controller('redditPostController', ['$scope', 'reddit', function ($scope, reddit) {
+            this.post = $scope.post;
+            this.removePost =  function() {
+                reddit.removePost(this.post);
+            }
 
+            this.incrementPost = function() {
+                this.post.count++;
+            }
 
+            this.decrementPost =  function() {
+                this.post.count--;
+            }
 
     }])
     .service('reddit', function(){
@@ -91,13 +102,18 @@ angular.module('reddit', [])
     .directive('redditPosts', function(){
         return {
             restrict: 'E',
-            templateUrl: 'src/app/reddit/reddit-posts.html'
+            templateUrl: 'src/app/reddit/reddit-posts.html',
+            controller: 'redditController as redditCtrl'
         }
     })
     .directive('redditPost', function(){
         return {
             restrict: 'E',
-            templateUrl: 'src/app/reddit/reddit-post.html'
+            templateUrl: 'src/app/reddit/reddit-post.html',
+            controller: 'redditPostController as postCtrl',
+            bindToController: {
+                post: '='
+            }
         }
     })
     .directive('redditComment', function(){
