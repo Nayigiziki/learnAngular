@@ -93,5 +93,23 @@ angular.module('reddit', [])
             restrict: 'E',
             templateUrl: 'src/app/reddit/reddit-posts.html'
         }
-  })
+    })
+    .directive('redditPost', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'src/app/reddit/reddit-post.html'
+        }
+    })
+    .directive('redditComment', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'src/app/reddit/reddit-comment.html'
+        }
+    })
+    .directive('redditPostForm', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'src/app/reddit/reddit-post-form.html'
+        }
+    })
 ;

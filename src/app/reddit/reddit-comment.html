@@ -1,0 +1,8 @@
+<a href="" ><i class="material-icons" ng-click="comment.showComment=!comment.showComment">comment</i></a>
+<ul ng-show="comment.showComment">
+  <i><b>Comments!</b></i>
+  <li ng-repeat="comment in post.comments">{{comment.content}} - {{comment.user}}</li>
+  <input ng-model="redditCtrl.newComment" placeholder="Share your thoughts!"/>
+  <input ng-model="redditCtrl.userName" placeholder="What's your name?!"/>
+  <a href="" ng-click="redditCtrl.addComment(post)"><i class="material-icons">note_add</i></a>
+</ul>

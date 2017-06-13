@@ -1,0 +1,12 @@
+<div class="col s1 post">
+    <h3>{{post.count}}</h3>
+    <a href="" ng-click="redditCtrl.incrementPost(post)"><i class="material-icons">thumb_up</i></a>
+    <a href="" ng-click="redditCtrl.decrementPost(post)"><i class="material-icons">thumb_down</i></a>
+</div>
+<div class="col s6">
+    <span class="title"><h2>{{post.title}}</h2></span>
+    <p>{{post.body}}<br>
+      <i>{{post.date}} - {{post.user}}</i>
+    </p>
+    <reddit-comment></reddit-comment>
+</div>
