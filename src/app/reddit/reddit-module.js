@@ -87,4 +87,11 @@ angular.module('reddit', [])
             addComment: addComment
         }
 
-    });
+    })
+    .directive('redditPosts', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'src/app/reddit/reddit-posts.html'
+        }
+  })
+;
