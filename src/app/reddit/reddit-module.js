@@ -28,7 +28,7 @@ angular.module('reddit', [])
 
     }])
     .controller('redditPostController', ['$scope', 'reddit', function ($scope, reddit) {
-            this.post = $scope.post;
+            // this.post = $scope.post;
             this.removePost =  function() {
                 reddit.removePost(this.post);
             }
@@ -39,6 +39,10 @@ angular.module('reddit', [])
 
             this.decrementPost =  function() {
                 this.post.count--;
+            }
+
+            this.apiCall = function(post) {
+                console.log('Api call', post)
             }
 
     }])
@@ -113,6 +117,19 @@ angular.module('reddit', [])
             controller: 'redditPostController as postCtrl',
             bindToController: {
                 post: '='
+            },
+            link: function(scope, element, attrs, ctrl) {
+                element.on('click', function() {
+                    alert('Hovering!');
+                })
+                var count = 0;
+                scope.$watch(function watcher(){
+                    return ctrl.post.count;
+                }, function listener(newValue, oldValue){
+                    if(newValue !== undefined) {
+                        ctrl.apiCall(ctrl.post)
+                    }
+                })
             }
         }
     })
